@@ -417,14 +417,14 @@ function pintarCanvas () {
 
 enviarPosicion (mokeponJugador.x , mokeponJugador.y)
 
-    hipodogeEnemigo.pintarMokepon()
+/*     hipodogeEnemigo.pintarMokepon()
     capipepoEnemigo.pintarMokepon()
     ratigueyaEnemigo.pintarMokepon()
     if(mokeponJugador.velocidadX !== 0 || mokeponJugador.velocidadY !== 0 ){
 revisarColision(hipodogeEnemigo)
 revisarColision(capipepoEnemigo)
-revisarColision(ratigueyaEnemigo)
-    }
+revisarColision(ratigueyaEnemigo) 
+    }*/
     
 }
 
