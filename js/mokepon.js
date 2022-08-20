@@ -15,6 +15,7 @@ const sectionVerMapa = document.getElementById ('ver-mapa')
 const mapa = document.getElementById('mapa')
 
 let jugadorId = null
+let enemigoId = null
 let mokepones = []
 let mokeponesEnemigos = []
 let ataqueJugador = []
@@ -461,11 +462,11 @@ function enviarPosicion(x, y) {
                         let mokeponEnemigo = null
                         const mokeponNombre = enemigo.mokepon.nombre || ""
                         if (mokeponNombre === "Hipodoge") {
-                            mokeponEnemigo = new Mokepon ('Hipodoge', './assets/mokepons_mokepon_hipodoge_attack.png', 5, './assets/hipodoge.png')
+                            mokeponEnemigo = new Mokepon ('Hipodoge', './assets/mokepons_mokepon_hipodoge_attack.png', 5, './assets/hipodoge.png', enemigo.id)
                         } else if (mokeponNombre === "Capipepo") {
-                            mokeponEnemigo = new Mokepon ('Capipepo', './assets/mokepons_mokepon_capipepo_attack.png', 5, './assets/capipepo.png')
+                            mokeponEnemigo = new Mokepon ('Capipepo', './assets/mokepons_mokepon_capipepo_attack.png', 5, './assets/capipepo.png', enemigo.id)
                         } else if (mokeponNombre === "Ratigueya") {
-                            mokeponEnemigo = new Mokepon ('Ratigueya', './assets/mokepons_mokepon_ratigueya_attack.png', 5, './assets/ratigueya.png')
+                            mokeponEnemigo = new Mokepon ('Ratigueya', './assets/mokepons_mokepon_ratigueya_attack.png', 5, './assets/ratigueya.png', enemigo.id)
                         }
                         
                         mokeponEnemigo.x = enemigo.x
@@ -553,6 +554,7 @@ function revisarColision(enemigo) {
     }
     detenerMovimiento()
     clearInterval(intervalo)
+    enemigoId = enemigo.id
    // alert("Has elejido pelear contra " + enemigo.nombre + ", QUE INICIE EL DUELO")
  sectionSeleccionarAtaque.style.display = 'flex'
  sectionVerMapa.style.display ='none'
