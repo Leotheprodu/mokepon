@@ -273,12 +273,29 @@ function  secuenciaAtaque () {
                 boton.disabled = true
                 boton.style.background = '#112f58'
                 
-            }  
-            ataqueAleatorioEnemigo()
+            } 
+            if (ataqueJugador.length === 5) {
+                enviarAtaques()
+            } 
+         
         })
     })
     
 }
+
+function enviarAtaques() {
+    fetch(`http://localhost:8080/mokepon/${jugadorId}/ataques`, {
+        method:"post",
+         headers: {
+            "Content-Type":"application/json"
+        },
+        body: JSON.stringify({ 
+            ataques:ataqueJugador
+        })
+    })    
+             
+}
+        
 
 function ataqueAleatorioEnemigo() {
     let ataqueAleatorio = aleatorio(0,ataquesMokeponEnemigo.length -1)
