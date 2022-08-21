@@ -25,12 +25,28 @@
 <section id="ver-mapa">
     <h2 class="subtitulo">recorre el mapa con tu Mokepon</h2>
     <canvas id="mapa"></canvas>
-    <button onmouseup="detenerMovimiento()" onmousedown="moverMascotaArriba()"  id="boton-arriba">Arriba</button>
+    <button 
+        ontouchend="detenerMovimiento()"
+        onmouseup="detenerMovimiento()"
+        onmousedown="moverMascotaArriba()" 
+        ontouchstart="moverMascotaArriba()"  id="boton-arriba">Arriba 
+    </button>
 
     <div id="botones-movimiento">
-            <button onmouseup="detenerMovimiento()" onmousedown="moverMascotaIzquierda()" id="boton-izquierda">Izquierda</button>
-            <button onmouseup="detenerMovimiento()" onmousedown="moverMascotaAbajo()" id="boton-abajo">Abajo</button>
-            <button onmouseup="detenerMovimiento()" onmousedown="moverMascotaDerecha()" id="boton-derecha">Derecha</button>
+            <button 
+                ontouchend="detenerMovimiento()"                    ontouchstart="moverMascotaIzquierda()"
+                onmouseup="detenerMovimiento()"                    onmousedown="moverMascotaIzquierda()"
+                id="boton-izquierda">Izquierda</button>
+            <button 
+                ontouchend="detenerMovimiento()"    ontouchstart="moverMascotaAbajo()"
+                onmouseup="detenerMovimiento()"
+                onmousedown="moverMascotaAbajo()"
+                id="boton-abajo">Abajo</button>
+            <button 
+                ontouchend="detenerMovimiento()"    ontouchstart="moverMascotaDerecha()" 
+                onmouseup="detenerMovimiento()"
+                onmousedown="moverMascotaDerecha()"
+                id="boton-derecha">Derecha</button>
 
     </div>
 
@@ -72,6 +88,6 @@
                 </div>
             </div>
         </section>
-        <script src="./js/mokepon.js"></script>
+        <script src="./mokepon.js"></script>
     </body>
 </html>

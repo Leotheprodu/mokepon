@@ -2,6 +2,7 @@ const express = require("express") //importamos la libreria
 const cors = require("cors")
 const app = express() //creamos una aplicacion con la libreria
 app.use(cors())
+app.use(express.static('public'))
 app.use(express.json())
 
 const jugadores = []
@@ -36,7 +37,7 @@ class Mokepon {
 app.get("/unirse", (req, res) => {
     const id = `${Math.random()}` //en url raiz, cuando reciba petición devuelva el Hola
    
-    res.setHeader("Access-Control-Allow-Origin","*")
+ res.setHeader("Access-Control-Allow-Origin","*")
    
    const jugador = new Jugador(id)
    
