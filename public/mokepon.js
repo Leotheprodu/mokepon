@@ -154,12 +154,12 @@ function unirseAlJuego() {
             if (res.ok) {
                 res.text()
                 .then(function (respuesta) {
-                    console.log(respuesta)  
-                    jugadorId = respuesta
+                    console.log(respuesta)
+                        jugadorId = respuesta
                 })
             }
 
-        })
+        }) 
 }
 
 function seleccionarMascotaJugador(){
