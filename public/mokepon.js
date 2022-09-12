@@ -123,7 +123,6 @@ ratigueya.ataques.push (...RATIGUEYA_ATAQUES)
 mokepones.push(hipodoge, capipepo, ratigueya)
 
 function iniciarJuego (){
-  
     sectionVerMapa.style.display = 'none'
     sectionSeleccionarAtaque.style.display = 'none'
 
@@ -144,12 +143,13 @@ function iniciarJuego (){
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
     botonReiniciar.addEventListener('click', reiniciarJuego)
     unirseAlJuego()
+    
 
     botonReiniciar.style.display = 'none'
 }
 
 function unirseAlJuego() {
-    fetch("http://192.168.40.142:8080/unirse") 
+    fetch("http://192.168.3.142:8080/unirse") // se deve revisar la ip, y cambiar esto para poderlo ejecutar
         .then(function (res) {
             if (res.ok) {
                 res.text()
@@ -187,7 +187,7 @@ function seleccionarMascotaJugador(){
 
     }   
     else {
-        alert ("debes seleccionar un mokepon")
+        alert ("debes seleccionar un mokepon") 
         return
     }
     sectionSeleccionarMascota.style.display = 'none'
@@ -200,7 +200,7 @@ function seleccionarMascotaJugador(){
 } 
 
 function seleccionarMokepon(mascotaJugador) {
-    fetch(`http://192.168.40.142:8080/mokepon/${jugadorId}` , {
+    fetch(`http://192.168.3.142:8080/mokepon/${jugadorId}` , { // se deve revisar la ip, y cambiar esto para poderlo ejecutar
         method: "post",
         headers: {
             "Content-Type" : "application/json"
@@ -282,7 +282,7 @@ function  secuenciaAtaque () {
 }
 
 function enviarAtaques() {
-    fetch(`http://192.168.40.142:8080/mokepon/${jugadorId}/ataques`, {
+    fetch(`http://192.168.3.142:8080/mokepon/${jugadorId}/ataques`, { // se deve revisar la ip, y cambiar esto para poderlo ejecutar
         method:"post",
          headers: {
             "Content-Type":"application/json"
@@ -294,7 +294,7 @@ function enviarAtaques() {
       intervalo = setInterval(obtenerAtaques, 50)       
 }
 function obtenerAtaques () {
-    fetch(`http://192.168.40.142:8080/mokepon/${enemigoId}/ataques`)
+    fetch(`http://192.168.3.142:8080/mokepon/${enemigoId}/ataques`) // se deve revisar la ip, y cambiar esto para poderlo ejecutar
         .then(function (res){
             if (res.ok) {
                 res.json()
@@ -456,7 +456,7 @@ function pintarCanvas () {
 }
 
 function enviarPosicion(x, y) {
-    fetch(`http://192.168.40.142:8080/mokepon/${jugadorId}/posicion`, {
+    fetch(`http://192.168.3.142:8080/mokepon/${jugadorId}/posicion`, { // se deve revisar la ip, y cambiar esto para poderlo ejecutar
         method: "post",
         headers: {
             "Content-Type": "application/json"

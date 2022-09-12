@@ -37,13 +37,14 @@ class Mokepon {
 app.get("/unirse", (req, res) => {
     const id = `${Math.random()}` //en url raiz, cuando reciba petición devuelva el Hola
    
- res.setHeader("Access-Control-Allow-Origin","*")
-   
-   const jugador = new Jugador(id)
-   
+    res.setHeader("Access-Control-Allow-Origin","*") 
+   jugador = new Jugador(id)
+
    jugadores.push(jugador)
-   
+  
    res.send(id)
+
+
 })
 
 app.post("/mokepon/:jugadorId", (req, res) => {
